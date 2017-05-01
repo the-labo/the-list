@@ -66,7 +66,9 @@ TheListStyle.data = (options) => {
           width: '100%'
         }
       },
-      '.the-list-item-image': {}
+      '.the-list-item-image': {
+        marginRight: '8px'
+      }
     }),
     asStyleData('.the-list-group', {
       '&': {
@@ -75,6 +77,7 @@ TheListStyle.data = (options) => {
       },
       '.the-list-group-header': {
         fontSize: 'smaller',
+        fontWeight: 'normal',
         backgroundColor: lightBackgroundColor,
         borderBottom: `1px solid ${lightBorderColor}`,
         color: lightTextColor,
