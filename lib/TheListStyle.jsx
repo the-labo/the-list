@@ -41,8 +41,7 @@ TheListStyle.data = (options) => {
       '&': {
         margin: 0,
         padding: 0,
-        backgroundColor,
-        maxWidth: contentWidth
+        backgroundColor
       },
       '.the-list-item': {
         listStyle: 'none',
