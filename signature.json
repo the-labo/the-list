@@ -1,0 +1,25 @@
+{
+  "TheList": {
+    "description": "List of the-components",
+    "displayName": "TheList",
+    "methods": []
+  },
+  "TheListStyle": {
+    "description": "Style for TheList",
+    "displayName": "TheListStyle",
+    "methods": [],
+    "props": {
+      "options": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Style options",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  }
+}
