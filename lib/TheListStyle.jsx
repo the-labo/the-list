@@ -33,6 +33,7 @@ TheListStyle.data = (options) => {
     lightBorderColor = ThemeValues.lightBorderColor,
     lightLinkColor = ThemeValues.lightLinkColor,
     lightBackgroundColor = ThemeValues.lightBackgroundColor,
+    lightTextColor = ThemeValues.lightTextColor,
     contentPadding = ThemeValues.contentPadding
   } = options
   return Object.assign({},
@@ -70,12 +71,14 @@ TheListStyle.data = (options) => {
     }),
     asStyleData('.the-list-group', {
       '&': {
-        display: 'block'
+        display: 'block',
+        margin: '8px 0'
       },
       '.the-list-group-header': {
         fontSize: 'smaller',
         backgroundColor: lightBackgroundColor,
         borderBottom: `1px solid ${lightBorderColor}`,
+        color: lightTextColor,
         margin: 0,
         padding: '0 8px'
       },

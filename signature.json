@@ -69,6 +69,44 @@
           "computed": false
         }
       },
+      "thumbnailHeight": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "92",
+          "computed": false
+        }
+      },
+      "thumbnailWidth": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "92",
+          "computed": false
+        }
+      },
       "disclosure": {
         "type": {
           "name": "bool"
