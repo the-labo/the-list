@@ -23,13 +23,16 @@ class TheListItem extends React.PureComponent {
       disclosure,
       to,
       thumbnailWidth,
-      thumbnailHeight
+      thumbnailHeight,
+      borderless
     } = props
     const Inner = to ? TheLink : 'span'
     return (
       <li { ...htmlAttributesFor(props, { except: [ 'className' ] }) }
           { ...eventHandlersFor(props, { except: [] })}
-          className={ classnames('the-list-item', className) }
+          className={ classnames('the-list-item', className, {
+            'the-list-item-borderless': borderless
+          }) }
       >
         <Inner to={to} className='the-list-item-inner'>
           {
@@ -72,12 +75,16 @@ TheListItem.DISCLOSURE_ICON = 'fa fa-angle-right'
 TheListItem.propTypes = {
   /** Thumbnail image url */
   thumbnail: PropTypes.string,
+  /** Height of thumbnail */
   thumbnailHeight: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]),
+  /** Width of thumbnail */
   thumbnailWidth: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]),
   /** Show disclosure icon */
   disclosure: PropTypes.bool,
   /** Link to */
-  to: PropTypes.string
+  to: PropTypes.string,
+
+  borderless: PropTypes.bool
 }
 
 TheListItem.defaultProps = {
@@ -85,7 +92,8 @@ TheListItem.defaultProps = {
   thumbnailWidth: 92,
   thumbnail: null,
   disclosure: false,
-  to: null
+  to: null,
+  borderless: false
 }
 
 TheListItem.displayName = 'TheListItem'
