@@ -68,6 +68,17 @@ TheListStyle.data = (options) => {
       },
       '.the-list-item-image': {
         marginRight: '8px'
+      },
+      '.the-list-item-title': {
+        margin: 0,
+        padding: '0 4px',
+        fontWeight: 'normal'
+      },
+      '.the-list-item-sub-title': {
+        margin: 0,
+        padding: '0 4px',
+        fontSize: 'small',
+        color: lightTextColor
       }
     }),
     asStyleData('.the-list-group', {

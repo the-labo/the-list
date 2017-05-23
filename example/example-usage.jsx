@@ -24,6 +24,10 @@ class ExampleComponent extends React.PureComponent {
                   content!</Item>
                 <Item to='/about' disclosure>about</Item>
                 <Item thumbnail={IMAGE_URL} disclosure>With Image</Item>
+
+                <Item title='This is Title'
+                      subTitle='This is Sub title'
+                />
               </TheList>
             </TheListGroup.Body>
           </TheListGroup>

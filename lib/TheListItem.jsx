@@ -15,7 +15,7 @@ class TheListItem extends React.PureComponent {
   render () {
     const s = this
     const { props } = s
-    const { Col } = TheListItem
+    const { Col, Title, SubTitle } = TheListItem
     let {
       className,
       children,
@@ -23,7 +23,10 @@ class TheListItem extends React.PureComponent {
       disclosure,
       to,
       thumbnailWidth,
-      thumbnailHeight
+      thumbnailHeight,
+      title,
+      subTitle
+
     } = props
     const Inner = to ? TheLink : 'span'
     return (
@@ -43,6 +46,8 @@ class TheListItem extends React.PureComponent {
           }
           <Col wide>
             { children }
+            {title && (<Title {...{ title }}/>)}
+            {subTitle && (<SubTitle {...{ subTitle }}/>)}
           </Col>
           {
             disclosure && (
@@ -56,12 +61,34 @@ class TheListItem extends React.PureComponent {
     )
   }
 
-  static Col ({ className, children, wide = false }) {
+  static Col (props) {
+    const { className, children, wide = false } = props
     return (
-      <div className={classnames('the-list-item-col', className, {
-        'the-list-item-col-wide': wide
-      })}>
+      <div { ...htmlAttributesFor(props, { except: [ 'className' ] }) }
+           className={classnames('the-list-item-col', className, {
+             'the-list-item-col-wide': wide
+           })}>
         { children }
+      </div>
+    )
+  }
+
+  static Title (props) {
+    const { className } = props
+    return (
+      <h3 { ...htmlAttributesFor(props, { except: [ 'className' ] }) }
+          className={classnames('the-list-item-title', className, {})}>
+        {props.title}
+      </h3>
+    )
+  }
+
+  static SubTitle (props) {
+    const { className } = props
+    return (
+      <div { ...htmlAttributesFor(props, { except: [ 'className' ] }) }
+           className={classnames('the-list-item-sub-title', className, {})}>
+        {props.subTitle}
       </div>
     )
   }
@@ -72,12 +99,18 @@ TheListItem.DISCLOSURE_ICON = 'fa fa-angle-right'
 TheListItem.propTypes = {
   /** Thumbnail image url */
   thumbnail: PropTypes.string,
+  /** Thumbnail image width */
   thumbnailHeight: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]),
+  /** Thumbnail image height */
   thumbnailWidth: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]),
   /** Show disclosure icon */
   disclosure: PropTypes.bool,
   /** Link to */
-  to: PropTypes.string
+  to: PropTypes.string,
+  /** Title text */
+  title: PropTypes.string,
+  /** Sub title text */
+  subTitle: PropTypes.string
 }
 
 TheListItem.defaultProps = {
