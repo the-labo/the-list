@@ -28,6 +28,10 @@ class ExampleComponent extends React.PureComponent {
                 <Item title='This is Title'
                       subTitle='This is Sub title'
                 />
+
+                <Item title='This is Title'
+                      subTitle='This is Sub title'
+                >With sub content</Item>
               </TheList>
             </TheListGroup.Body>
           </TheListGroup>

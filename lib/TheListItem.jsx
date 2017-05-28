@@ -47,9 +47,9 @@ class TheListItem extends React.PureComponent {
             )
           }
           <Col wide>
-            { children }
             {title && (<Title {...{ title }}/>)}
             {subTitle && (<SubTitle {...{ subTitle }}/>)}
+            {children}
           </Col>
           {
             disclosure && (
@@ -110,9 +110,9 @@ TheListItem.propTypes = {
   /** Link to */
   to: PropTypes.string,
   /** Title text */
-  title: PropTypes.string,
+  title: PropTypes.node,
   /** Sub title text */
-  subTitle: PropTypes.string,
+  subTitle: PropTypes.node,
   borderless: PropTypes.bool
 }
 
@@ -121,7 +121,7 @@ TheListItem.defaultProps = {
   thumbnailWidth: 92,
   thumbnail: null,
   title: null,
-  subTitle: null
+  subTitle: null,
   disclosure: false,
   to: null,
   borderless: false
