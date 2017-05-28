@@ -82,7 +82,7 @@
           ]
         },
         "required": false,
-        "description": "",
+        "description": "Height of thumbnail",
         "defaultValue": {
           "value": "92",
           "computed": false
@@ -101,7 +101,7 @@
           ]
         },
         "required": false,
-        "description": "",
+        "description": "Width of thumbnail",
         "defaultValue": {
           "value": "92",
           "computed": false
@@ -126,6 +126,17 @@
         "description": "Link to",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "borderless": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
           "computed": false
         }
       }

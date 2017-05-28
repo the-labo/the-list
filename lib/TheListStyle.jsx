@@ -48,7 +48,10 @@ TheListStyle.data = (options) => {
         padding: 0,
         margin: 0,
         minHeight: tappableHeight,
-        borderBottom: `1px solid ${lightBorderColor}`
+        borderBottom: `1px solid ${lightBorderColor}`,
+        '&.the-list-item-borderless': {
+          border: 'none'
+        }
       },
       '.the-list-item-inner': {
         display: 'flex',

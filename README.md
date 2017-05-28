@@ -145,10 +145,11 @@ Item of list
 | Name | Type | Description | Default |
 | --- | --- | ---- | ---- |
 | `thumbnail` | string  | Thumbnail image url | `null` |
-| `thumbnailHeight` | union  |  | `92` |
-| `thumbnailWidth` | union  |  | `92` |
+| `thumbnailHeight` | union  | Height of thumbnail | `92` |
+| `thumbnailWidth` | union  | Width of thumbnail | `92` |
 | `disclosure` | bool  | Show disclosure icon | `false` |
 | `to` | string  | Link to | `null` |
+| `borderless` | bool  |  | `false` |
 
 ### TheListStyle
 
