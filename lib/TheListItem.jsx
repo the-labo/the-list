@@ -120,6 +120,8 @@ TheListItem.defaultProps = {
   thumbnailHeight: 92,
   thumbnailWidth: 92,
   thumbnail: null,
+  title: null,
+  subTitle: null
   disclosure: false,
   to: null,
   borderless: false
