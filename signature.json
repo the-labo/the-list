@@ -50,7 +50,35 @@
         ],
         "params": [
           {
-            "name": "{ className, children, wide = false }",
+            "name": "props",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "Title",
+        "docblock": null,
+        "modifiers": [
+          "static"
+        ],
+        "params": [
+          {
+            "name": "props",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "SubTitle",
+        "docblock": null,
+        "modifiers": [
+          "static"
+        ],
+        "params": [
+          {
+            "name": "props",
             "type": null
           }
         ],
@@ -124,6 +152,28 @@
         },
         "required": false,
         "description": "Link to",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "title": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Title text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "subTitle": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Sub title text",
         "defaultValue": {
           "value": "null",
           "computed": false
