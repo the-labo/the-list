@@ -16,12 +16,15 @@ class TheList extends React.PureComponent {
     const { props } = s
     let {
       className,
-      children
+      children,
+      horizontal
     } = props
     return (
       <ul { ...htmlAttributesFor(props, { except: [ 'className' ] }) }
           { ...eventHandlersFor(props, { except: [] })}
-          className={ classnames('the-list', className) }
+          className={ classnames('the-list', className, {
+            'the-list-horizontal': horizontal
+          }) }
       >
         { children }
       </ul>
@@ -32,9 +35,13 @@ class TheList extends React.PureComponent {
 TheList.Style = TheListStyle
 TheList.Item = TheListItem
 
-TheList.propTypes = {}
+TheList.propTypes = {
+  horizontal: PropTypes.bool
+}
 
-TheList.defaultProps = {}
+TheList.defaultProps = {
+  horizontal: false
+}
 
 TheList.displayName = 'TheList'
 

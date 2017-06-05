@@ -84,6 +84,35 @@ TheListStyle.data = (options) => {
         color: lightTextColor
       }
     }),
+    asStyleData('.the-list-horizontal', {
+      '&': {
+        display: 'flex',
+        alignItems: 'flex-start',
+        overflow: 'auto',
+        margin: '0',
+        padding: '8px 4px'
+      },
+      '.the-list-item': {
+        display: 'block',
+        width: 'auto',
+        margin: 0,
+        overflow: 'hidden',
+        flexShrink: 0,
+        maxWidth: '100%',
+        border: 'none',
+        '.the-list-item-inner': {
+          padding: '8px',
+          border: `1px solid ${lightBorderColor}`,
+          margin: '8px'
+        },
+        '&.the-list-item-borderless': {
+          '.the-list-item-inner': {
+            border: 'none'
+          }
+        }
+      }
+
+    }),
     asStyleData('.the-list-group', {
       '&': {
         display: 'block',

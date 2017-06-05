@@ -110,6 +110,27 @@ class ExampleComponent extends React.PureComponent {
                 >With sub content</Item>
               </TheList>
             </TheListGroup.Body>
+
+            <TheListGroup.Header>Horizontal List</TheListGroup.Header>
+            <TheListGroup.Body>
+              <TheList horizontal>
+                <Item disclosure>Foo</Item>
+                <Item>Bar</Item>
+                <Item disclosure>This is a very very very very very very very very very very
+                  very very very very very very very very very very very long
+                  content!</Item>
+                <Item to='/about' disclosure>about</Item>
+                <Item thumbnail={IMAGE_URL} disclosure>With Image</Item>
+
+                <Item title='This is Title'
+                      subTitle='This is Sub title'
+                />
+
+                <Item title='This is Title'
+                      subTitle='This is Sub title'
+                >With sub content</Item>
+              </TheList>
+            </TheListGroup.Body>
           </TheListGroup>
         </TheRouter.Hash>
       </div>
@@ -155,6 +176,8 @@ Item of list
 | `thumbnailWidth` | union  | Width of thumbnail | `92` |
 | `disclosure` | bool  | Show disclosure icon | `false` |
 | `to` | string  | Link to | `null` |
+| `title` | node  | Title text | `null` |
+| `subTitle` | node  | Sub title text | `null` |
 | `borderless` | bool  |  | `false` |
 
 ### TheListStyle
