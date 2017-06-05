@@ -2,7 +2,20 @@
   "TheList": {
     "description": "List components",
     "displayName": "TheList",
-    "methods": []
+    "methods": [],
+    "props": {
+      "horizontal": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
   },
   "TheListGroup": {
     "description": "Group of list",
