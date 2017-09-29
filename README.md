@@ -157,6 +157,11 @@ Components
 
 List components
 
+**Props**
+
+| Name | Type | Description | Default |
+| --- | --- | ---- | ---- |
+| `horizontal` | bool  |  | `false` |
 
 ### TheListGroup
 

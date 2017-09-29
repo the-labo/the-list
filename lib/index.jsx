@@ -1,7 +1,7 @@
 /**
  * List of the-components
  * @module the-list
- * @version 1.2.1
+ * @version 2.0.0
  */
 'use strict'
 
