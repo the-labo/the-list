@@ -7,10 +7,10 @@ import TheStyle from 'the-style'
 import { asStyleData } from 'the-component-util'
 
 /** Style for TheList */
-const TheListStyle = ({ id, className, options }) => (
-  <TheStyle { ...{ id } }
-            className={ classnames('the-list-style', className) }
-            styles={ TheListStyle.data(options) }
+const TheListStyle = ({id, className, options}) => (
+  <TheStyle {...{id}}
+            className={classnames('the-list-style', className)}
+            styles={TheListStyle.data(options)}
   />
 )
 
@@ -25,8 +25,8 @@ TheListStyle.defaultProps = {
 }
 
 TheListStyle.data = (options) => {
-  const { ThemeValues } = TheStyle
-  let {
+  const {ThemeValues} = TheStyle
+  const {
     contentWidth = ThemeValues.contentWidth,
     backgroundColor = ThemeValues.backgroundColor,
     tappableHeight = ThemeValues.tappableHeight,
@@ -41,7 +41,8 @@ TheListStyle.data = (options) => {
       '&': {
         margin: 0,
         padding: 0,
-        backgroundColor
+        backgroundColor,
+        position: 'relative',
       },
       '.the-list-item': {
         listStyle: 'none',

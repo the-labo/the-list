@@ -13,10 +13,9 @@ import { htmlAttributesFor, eventHandlersFor } from 'the-component-util'
  */
 class TheListItem extends React.PureComponent {
   render () {
-    const s = this
-    const { props } = s
-    const { Col, Title, SubTitle } = TheListItem
-    let {
+    const {props} = this
+    const {Col, Title, SubTitle} = TheListItem
+    const {
       className,
       children,
       thumbnail,
@@ -30,11 +29,11 @@ class TheListItem extends React.PureComponent {
     } = props
     const Inner = to ? TheLink : 'span'
     return (
-      <li { ...htmlAttributesFor(props, { except: [ 'className' ] }) }
-          { ...eventHandlersFor(props, { except: [] })}
-          className={ classnames('the-list-item', className, {
+      <li {...htmlAttributesFor(props, {except: ['className']})}
+          {...eventHandlersFor(props, {except: []})}
+          className={classnames('the-list-item', className, {
             'the-list-item-borderless': borderless
-          }) }
+          })}
       >
         <Inner to={to} className='the-list-item-inner'>
           {
@@ -47,8 +46,8 @@ class TheListItem extends React.PureComponent {
             )
           }
           <Col wide>
-            {title && (<Title {...{ title }}/>)}
-            {subTitle && (<SubTitle {...{ subTitle }}/>)}
+            {title && (<Title {...{title}}/>)}
+            {subTitle && (<SubTitle {...{subTitle}}/>)}
             {children}
           </Col>
           {
@@ -64,21 +63,21 @@ class TheListItem extends React.PureComponent {
   }
 
   static Col (props) {
-    const { className, children, wide = false } = props
+    const {className, children, wide = false} = props
     return (
-      <div { ...htmlAttributesFor(props, { except: [ 'className' ] }) }
+      <div {...htmlAttributesFor(props, {except: ['className']})}
            className={classnames('the-list-item-col', className, {
              'the-list-item-col-wide': wide
            })}>
-        { children }
+        {children}
       </div>
     )
   }
 
   static Title (props) {
-    const { className } = props
+    const {className} = props
     return (
-      <h3 { ...htmlAttributesFor(props, { except: [ 'className' ] }) }
+      <h3 {...htmlAttributesFor(props, {except: ['className']})}
           className={classnames('the-list-item-title', className, {})}>
         {props.title}
       </h3>
@@ -86,9 +85,9 @@ class TheListItem extends React.PureComponent {
   }
 
   static SubTitle (props) {
-    const { className } = props
+    const {className} = props
     return (
-      <div { ...htmlAttributesFor(props, { except: [ 'className' ] }) }
+      <div {...htmlAttributesFor(props, {except: ['className']})}
            className={classnames('the-list-item-sub-title', className, {})}>
         {props.subTitle}
       </div>
@@ -102,9 +101,9 @@ TheListItem.propTypes = {
   /** Thumbnail image url */
   thumbnail: PropTypes.string,
   /** Height of thumbnail */
-  thumbnailHeight: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]),
+  thumbnailHeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Width of thumbnail */
-  thumbnailWidth: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]),
+  thumbnailWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Show disclosure icon */
   disclosure: PropTypes.bool,
   /** Link to */
