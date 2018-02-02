@@ -25,6 +25,17 @@
           "value": "false",
           "computed": false
         }
+      },
+      "alt": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'No Data Found'",
+          "computed": false
+        }
       }
     }
   },
