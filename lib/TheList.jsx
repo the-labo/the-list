@@ -20,7 +20,9 @@ class TheList extends React.PureComponent {
       children,
       horizontal,
       spinning,
+      alt,
     } = props
+    const empty = React.Children.count(children) === 0
     return (
       <ul {...htmlAttributesFor(props, {except: ['className']})}
           {...eventHandlersFor(props, {except: []})}
@@ -34,6 +36,9 @@ class TheList extends React.PureComponent {
                    size='x-large'
           />
         </TheCondition>
+        <TheCondition if={empty}>
+          <li className='the-list-alt'>{alt}</li>
+        </TheCondition>
         {children}
       </ul>
     )
@@ -46,11 +51,13 @@ TheList.Item = TheListItem
 TheList.propTypes = {
   horizontal: PropTypes.bool,
   spinning: PropTypes.bool,
+  alt: PropTypes.node
 }
 
 TheList.defaultProps = {
   horizontal: false,
   spinning: false,
+  alt: 'No Data Found'
 }
 
 TheList.displayName = 'TheList'

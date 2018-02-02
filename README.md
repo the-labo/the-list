@@ -111,6 +111,8 @@ class ExampleComponent extends React.PureComponent {
                       subTitle='This is Sub title'
                 >With sub content</Item>
               </TheList>
+              <TheList alt={'This is empty list'}>
+              </TheList>
             </TheListGroup.Body>
 
             <TheListGroup.Header>Horizontal List</TheListGroup.Header>
@@ -164,6 +166,7 @@ List components
 | Name | Type | Description | Default |
 | --- | --- | ---- | ---- |
 | `horizontal` | bool  |  | `false` |
+| `spinning` | bool  |  | `false` |
 
 ### TheListGroup
 

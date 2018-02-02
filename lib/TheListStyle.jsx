@@ -44,6 +44,14 @@ TheListStyle.data = (options) => {
         backgroundColor,
         position: 'relative',
       },
+      '.the-list-alt': {
+        display: 'block',
+        listStyle: 'none',
+        textAlign: 'center',
+        fontSize: '1.33em',
+        color: '#CCC',
+        padding: '32px 8px',
+      },
       '.the-list-item': {
         listStyle: 'none',
         padding: 0,
