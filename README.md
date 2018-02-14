@@ -167,6 +167,7 @@ List components
 | --- | --- | ---- | ---- |
 | `horizontal` | bool  |  | `false` |
 | `spinning` | bool  |  | `false` |
+| `alt` | node  |  | `'No Data Found'` |
 
 ### TheListGroup
 
