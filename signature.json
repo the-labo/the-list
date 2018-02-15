@@ -121,6 +121,17 @@
       }
     ],
     "props": {
+      "appendix": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Appendix",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "borderless": {
         "type": {
           "name": "bool"
