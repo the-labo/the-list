@@ -1,13 +1,13 @@
 'use strict'
 
-import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import TheListStyle from './TheListStyle'
-import TheListItem from './TheListItem'
-import { TheSpin } from 'the-spin'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { eventHandlersFor, htmlAttributesFor } from 'the-component-util'
 import { TheCondition } from 'the-condition'
-import { htmlAttributesFor, eventHandlersFor } from 'the-component-util'
+import { TheSpin } from 'the-spin'
+import TheListItem from './TheListItem'
+import TheListStyle from './TheListStyle'
 
 /**
  * List components
@@ -16,18 +16,18 @@ class TheList extends React.PureComponent {
   render () {
     const {props} = this
     const {
-      className,
+      alt,
       children,
+      className,
       horizontal,
       spinning,
-      alt,
     } = props
     const empty = React.Children.count(children) === 0
     return (
       <ul {...htmlAttributesFor(props, {except: ['className']})}
           {...eventHandlersFor(props, {except: []})}
           className={classnames('the-list', className, {
-            'the-list-horizontal': horizontal
+            'the-list-horizontal': horizontal,
           })}
       >
         <TheCondition if={!!spinning}>
@@ -49,15 +49,15 @@ TheList.Style = TheListStyle
 TheList.Item = TheListItem
 
 TheList.propTypes = {
+  alt: PropTypes.node,
   horizontal: PropTypes.bool,
   spinning: PropTypes.bool,
-  alt: PropTypes.node
 }
 
 TheList.defaultProps = {
+  alt: 'No Data Found',
   horizontal: false,
   spinning: false,
-  alt: 'No Data Found'
 }
 
 TheList.displayName = 'TheList'

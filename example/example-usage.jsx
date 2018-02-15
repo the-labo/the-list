@@ -29,6 +29,7 @@ class ExampleComponent extends React.PureComponent {
 
                 <Item title='This is Title'
                       subTitle='This is Sub title'
+                      appendix='This is appendix'
                 />
 
                 <Item title='This is Title'
@@ -56,6 +57,11 @@ class ExampleComponent extends React.PureComponent {
 
                 <Item title='This is Title'
                       subTitle='This is Sub title'
+                >With sub content</Item>
+
+                <Item title='This is Title'
+                      subTitle='This is Sub title'
+                      appendix={'This is appendix'}
                 >With sub content</Item>
               </TheList>
             </TheListGroup.Body>

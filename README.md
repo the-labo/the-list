@@ -105,6 +105,7 @@ class ExampleComponent extends React.PureComponent {
 
                 <Item title='This is Title'
                       subTitle='This is Sub title'
+                      appendix='This is appendix'
                 />
 
                 <Item title='This is Title'
@@ -132,6 +133,11 @@ class ExampleComponent extends React.PureComponent {
 
                 <Item title='This is Title'
                       subTitle='This is Sub title'
+                >With sub content</Item>
+
+                <Item title='This is Title'
+                      subTitle='This is Sub title'
+                      appendix={'This is appendix'}
                 >With sub content</Item>
               </TheList>
             </TheListGroup.Body>
@@ -165,9 +171,9 @@ List components
 
 | Name | Type | Description | Default |
 | --- | --- | ---- | ---- |
+| `alt` | node  |  | `'No Data Found'` |
 | `horizontal` | bool  |  | `false` |
 | `spinning` | bool  |  | `false` |
-| `alt` | node  |  | `'No Data Found'` |
 
 ### TheListGroup
 
@@ -182,14 +188,14 @@ Item of list
 
 | Name | Type | Description | Default |
 | --- | --- | ---- | ---- |
+| `borderless` | bool  |  | `false` |
+| `disclosure` | bool  | Show disclosure icon | `false` |
+| `subTitle` | node  | Sub title text | `null` |
 | `thumbnail` | string  | Thumbnail image url | `null` |
 | `thumbnailHeight` | union  | Height of thumbnail | `92` |
 | `thumbnailWidth` | union  | Width of thumbnail | `92` |
-| `disclosure` | bool  | Show disclosure icon | `false` |
-| `to` | string  | Link to | `null` |
 | `title` | node  | Title text | `null` |
-| `subTitle` | node  | Sub title text | `null` |
-| `borderless` | bool  |  | `false` |
+| `to` | string  | Link to | `null` |
 
 ### TheListStyle
 

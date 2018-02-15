@@ -1,25 +1,21 @@
 'use strict'
 
-import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { eventHandlersFor, htmlAttributesFor } from 'the-component-util'
 import { TheIcon } from 'the-icon'
-import { htmlAttributesFor, eventHandlersFor } from 'the-component-util'
 
 /**
  * Group of list
  */
 class TheListGroup extends React.Component {
-  render () {
-    const {props} = this
-    const {
-      className,
-      children
-    } = props
+  static Body (props) {
+    let {children, className} = props
     return (
       <div {...htmlAttributesFor(props, {except: ['className']})}
            {...eventHandlersFor(props, {except: []})}
-           className={classnames('the-list-group', className)}
+           className={classnames('the-list-group-body', className)}
       >
         {children}
       </div>
@@ -27,7 +23,7 @@ class TheListGroup extends React.Component {
   }
 
   static Header (props) {
-    let {className, children} = props
+    let {children, className} = props
     return (
       <h3 {...htmlAttributesFor(props, {except: ['className']})}
           {...eventHandlersFor(props, {except: []})}
@@ -38,12 +34,16 @@ class TheListGroup extends React.Component {
     )
   }
 
-  static Body (props) {
-    let {className, children} = props
+  render () {
+    const {props} = this
+    const {
+      children,
+      className,
+    } = props
     return (
       <div {...htmlAttributesFor(props, {except: ['className']})}
            {...eventHandlersFor(props, {except: []})}
-           className={classnames('the-list-group-body', className)}
+           className={classnames('the-list-group', className)}
       >
         {children}
       </div>

@@ -1,75 +1,35 @@
 'use strict'
 
-import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { eventHandlersFor, htmlAttributesFor } from 'the-component-util'
 import { TheIcon } from 'the-icon'
 import { TheImage } from 'the-image'
 import { TheLink } from 'the-link'
-import { htmlAttributesFor, eventHandlersFor } from 'the-component-util'
 
 /**
  * Item of list
  */
-class TheListItem extends React.PureComponent {
-  render () {
-    const {props} = this
-    const {Col, Title, SubTitle} = TheListItem
-    const {
-      className,
-      children,
-      thumbnail,
-      disclosure,
-      to,
-      thumbnailWidth,
-      thumbnailHeight,
-      title,
-      subTitle,
-      borderless
-    } = props
-    const Inner = to ? TheLink : 'span'
-    return (
-      <li {...htmlAttributesFor(props, {except: ['className']})}
-          {...eventHandlersFor(props, {except: []})}
-          className={classnames('the-list-item', className, {
-            'the-list-item-borderless': borderless
-          })}
-      >
-        <Inner to={to} className='the-list-item-inner'>
-          {
-            thumbnail && (
-              <Col><TheImage className='the-list-item-image'
-                             src={thumbnail}
-                             width={thumbnailWidth}
-                             height={thumbnailHeight}
-              /></Col>
-            )
-          }
-          <Col wide>
-            {title && (<Title {...{title}}/>)}
-            {subTitle && (<SubTitle {...{subTitle}}/>)}
-            {children}
-          </Col>
-          {
-            disclosure && (
-              <Col>
-                <TheIcon className={classnames('the-list-item-icon', TheListItem.DISCLOSURE_ICON)}/>
-              </Col>
-            )
-          }
-        </Inner>
-      </li>
-    )
-  }
-
+class TheListItem extends React.Component {
   static Col (props) {
-    const {className, children, wide = false} = props
+    const {children, className, wide = false} = props
     return (
       <div {...htmlAttributesFor(props, {except: ['className']})}
            className={classnames('the-list-item-col', className, {
-             'the-list-item-col-wide': wide
+             'the-list-item-col-wide': wide,
            })}>
         {children}
+      </div>
+    )
+  }
+
+  static SubTitle (props) {
+    const {className} = props
+    return (
+      <div {...htmlAttributesFor(props, {except: ['className']})}
+           className={classnames('the-list-item-sub-title', className, {})}>
+        {props.subTitle}
       </div>
     )
   }
@@ -84,13 +44,59 @@ class TheListItem extends React.PureComponent {
     )
   }
 
-  static SubTitle (props) {
-    const {className} = props
+  render () {
+    const {props} = this
+    const {Col, SubTitle, Title} = TheListItem
+    const {
+      appendix,
+      borderless,
+      children,
+      className,
+      disclosure,
+      subTitle,
+      thumbnail,
+      thumbnailHeight,
+      thumbnailWidth,
+      title,
+      to,
+    } = props
+    const Inner = to ? TheLink : 'span'
     return (
-      <div {...htmlAttributesFor(props, {except: ['className']})}
-           className={classnames('the-list-item-sub-title', className, {})}>
-        {props.subTitle}
-      </div>
+      <li {...htmlAttributesFor(props, {except: ['className']})}
+          {...eventHandlersFor(props, {except: []})}
+          className={classnames('the-list-item', className, {
+            'the-list-item-borderless': borderless,
+          })}
+      >
+        <Inner className='the-list-item-inner' to={to}>
+          {
+            thumbnail && (
+              <Col><TheImage className='the-list-item-image'
+                             height={thumbnailHeight}
+                             src={thumbnail}
+                             width={thumbnailWidth}
+              /></Col>
+            )
+          }
+          <Col wide>
+            {title && (<Title {...{title}}/>)}
+            {subTitle && (<SubTitle {...{subTitle}}/>)}
+            {children}
+          </Col>
+          {
+            appendix && (
+              <Col>{appendix}</Col>
+            )
+          }
+          {
+            disclosure && (
+              <Col>
+                <TheIcon className={classnames('the-list-item-icon', TheListItem.DISCLOSURE_ICON)}/>
+              </Col>
+            )
+          }
+        </Inner>
+      </li>
     )
   }
 }
@@ -98,32 +104,35 @@ class TheListItem extends React.PureComponent {
 TheListItem.DISCLOSURE_ICON = 'fa fa-angle-right'
 
 TheListItem.propTypes = {
+  /** Appendix */
+  appendix: PropTypes.node,
+  borderless: PropTypes.bool,
+  /** Show disclosure icon */
+  disclosure: PropTypes.bool,
+  /** Sub title text */
+  subTitle: PropTypes.node,
   /** Thumbnail image url */
   thumbnail: PropTypes.string,
   /** Height of thumbnail */
   thumbnailHeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Width of thumbnail */
   thumbnailWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /** Show disclosure icon */
-  disclosure: PropTypes.bool,
-  /** Link to */
-  to: PropTypes.string,
   /** Title text */
   title: PropTypes.node,
-  /** Sub title text */
-  subTitle: PropTypes.node,
-  borderless: PropTypes.bool
+  /** Link to */
+  to: PropTypes.string,
 }
 
 TheListItem.defaultProps = {
+  appendix: null,
+  borderless: false,
+  disclosure: false,
+  subTitle: null,
+  thumbnail: null,
   thumbnailHeight: 92,
   thumbnailWidth: 92,
-  thumbnail: null,
   title: null,
-  subTitle: null,
-  disclosure: false,
   to: null,
-  borderless: false
 }
 
 TheListItem.displayName = 'TheListItem'

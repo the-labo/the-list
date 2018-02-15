@@ -4,6 +4,17 @@
     "displayName": "TheList",
     "methods": [],
     "props": {
+      "alt": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'No Data Found'",
+          "computed": false
+        }
+      },
       "horizontal": {
         "type": {
           "name": "bool"
@@ -25,17 +36,6 @@
           "value": "false",
           "computed": false
         }
-      },
-      "alt": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "'No Data Found'",
-          "computed": false
-        }
       }
     }
   },
@@ -44,7 +44,7 @@
     "displayName": "TheListGroup",
     "methods": [
       {
-        "name": "Header",
+        "name": "Body",
         "docblock": null,
         "modifiers": [
           "static"
@@ -58,7 +58,7 @@
         "returns": null
       },
       {
-        "name": "Body",
+        "name": "Header",
         "docblock": null,
         "modifiers": [
           "static"
@@ -92,7 +92,7 @@
         "returns": null
       },
       {
-        "name": "Title",
+        "name": "SubTitle",
         "docblock": null,
         "modifiers": [
           "static"
@@ -106,7 +106,7 @@
         "returns": null
       },
       {
-        "name": "SubTitle",
+        "name": "Title",
         "docblock": null,
         "modifiers": [
           "static"
@@ -121,6 +121,39 @@
       }
     ],
     "props": {
+      "borderless": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "disclosure": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Show disclosure icon",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "subTitle": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Sub title text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "thumbnail": {
         "type": {
           "name": "string"
@@ -170,28 +203,6 @@
           "computed": false
         }
       },
-      "disclosure": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "Show disclosure icon",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "to": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "Link to",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
       "title": {
         "type": {
           "name": "node"
@@ -203,25 +214,14 @@
           "computed": false
         }
       },
-      "subTitle": {
+      "to": {
         "type": {
-          "name": "node"
+          "name": "string"
         },
         "required": false,
-        "description": "Sub title text",
+        "description": "Link to",
         "defaultValue": {
           "value": "null",
-          "computed": false
-        }
-      },
-      "borderless": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "false",
           "computed": false
         }
       }
