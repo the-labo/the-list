@@ -102,6 +102,8 @@ class ExampleComponent extends React.PureComponent {
                   content!</Item>
                 <Item to='/about' disclosure>about</Item>
                 <Item thumbnail={IMAGE_URL} disclosure>With Image</Item>
+                <Item icon='fas fa-car'
+                      thumbnail={IMAGE_URL} disclosure>With Icon</Item>
 
                 <Item title='This is Title'
                       subTitle='This is Sub title'
@@ -188,8 +190,10 @@ Item of list
 
 | Name | Type | Description | Default |
 | --- | --- | ---- | ---- |
-| `borderless` | bool  |  | `false` |
+| `appendix` | node  | Appendix | `null` |
+| `borderless` | bool  | Render with borderless style | `false` |
 | `disclosure` | bool  | Show disclosure icon | `false` |
+| `icon` | string  | Icon class | `` |
 | `subTitle` | node  | Sub title text | `null` |
 | `thumbnail` | string  | Thumbnail image url | `null` |
 | `thumbnailHeight` | union  | Height of thumbnail | `92` |

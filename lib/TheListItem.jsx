@@ -1,6 +1,6 @@
 'use strict'
 
-import classnames from 'classnames'
+import c from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { eventHandlersFor, htmlAttributesFor } from 'the-component-util'
@@ -16,7 +16,7 @@ class TheListItem extends React.Component {
     const {children, className, wide = false} = props
     return (
       <div {...htmlAttributesFor(props, {except: ['className']})}
-           className={classnames('the-list-item-col', className, {
+           className={c('the-list-item-col', className, {
              'the-list-item-col-wide': wide,
            })}>
         {children}
@@ -28,7 +28,7 @@ class TheListItem extends React.Component {
     const {className} = props
     return (
       <div {...htmlAttributesFor(props, {except: ['className']})}
-           className={classnames('the-list-item-sub-title', className, {})}>
+           className={c('the-list-item-sub-title', className, {})}>
         {props.subTitle}
       </div>
     )
@@ -38,7 +38,7 @@ class TheListItem extends React.Component {
     const {className} = props
     return (
       <h3 {...htmlAttributesFor(props, {except: ['className']})}
-          className={classnames('the-list-item-title', className, {})}>
+          className={c('the-list-item-title', className, {})}>
         {props.title}
       </h3>
     )
@@ -53,6 +53,7 @@ class TheListItem extends React.Component {
       children,
       className,
       disclosure,
+      icon,
       subTitle,
       thumbnail,
       thumbnailHeight,
@@ -64,18 +65,27 @@ class TheListItem extends React.Component {
     return (
       <li {...htmlAttributesFor(props, {except: ['className']})}
           {...eventHandlersFor(props, {except: []})}
-          className={classnames('the-list-item', className, {
+          className={c('the-list-item', className, {
             'the-list-item-borderless': borderless,
           })}
       >
         <Inner className='the-list-item-inner' to={to}>
           {
+            icon && (
+              <Col>
+                <TheIcon className={c('the-list-item-icon', icon)}/>
+              </Col>
+            )
+          }
+          {
             thumbnail && (
-              <Col><TheImage className='the-list-item-image'
-                             height={thumbnailHeight}
-                             src={thumbnail}
-                             width={thumbnailWidth}
-              /></Col>
+              <Col>
+                <TheImage className='the-list-item-image'
+                          height={thumbnailHeight}
+                          src={thumbnail}
+                          width={thumbnailWidth}
+                />
+              </Col>
             )
           }
           <Col wide>
@@ -91,7 +101,7 @@ class TheListItem extends React.Component {
           {
             disclosure && (
               <Col>
-                <TheIcon className={classnames('the-list-item-icon', TheListItem.DISCLOSURE_ICON)}/>
+                <TheIcon className={c('the-list-item-icon', TheListItem.DISCLOSURE_ICON)}/>
               </Col>
             )
           }
@@ -106,9 +116,12 @@ TheListItem.DISCLOSURE_ICON = 'fa fa-angle-right'
 TheListItem.propTypes = {
   /** Appendix */
   appendix: PropTypes.node,
+  /** Render with borderless style */
   borderless: PropTypes.bool,
   /** Show disclosure icon */
   disclosure: PropTypes.bool,
+  /** Icon class */
+  icon: PropTypes.string,
   /** Sub title text */
   subTitle: PropTypes.node,
   /** Thumbnail image url */
@@ -129,8 +142,8 @@ TheListItem.defaultProps = {
   disclosure: false,
   subTitle: null,
   thumbnail: null,
-  thumbnailHeight: 92,
-  thumbnailWidth: 92,
+  thumbnailHeight: 72,
+  thumbnailWidth: 72,
   title: null,
   to: null,
 }
