@@ -198,7 +198,7 @@
         "required": false,
         "description": "Height of thumbnail",
         "defaultValue": {
-          "value": "92",
+          "value": "72",
           "computed": false
         }
       },
@@ -217,7 +217,7 @@
         "required": false,
         "description": "Width of thumbnail",
         "defaultValue": {
-          "value": "92",
+          "value": "72",
           "computed": false
         }
       },
