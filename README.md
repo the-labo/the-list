@@ -196,8 +196,8 @@ Item of list
 | `icon` | string  | Icon class | `` |
 | `subTitle` | node  | Sub title text | `null` |
 | `thumbnail` | string  | Thumbnail image url | `null` |
-| `thumbnailHeight` | union  | Height of thumbnail | `92` |
-| `thumbnailWidth` | union  | Width of thumbnail | `92` |
+| `thumbnailHeight` | union  | Height of thumbnail | `72` |
+| `thumbnailWidth` | union  | Width of thumbnail | `72` |
 | `title` | node  | Title text | `null` |
 | `to` | string  | Link to | `null` |
 

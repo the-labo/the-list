@@ -60,6 +60,11 @@ TheListStyle.data = (options) => {
         '&.the-list-item-col-wide': {
           width: '100%',
         },
+        alignItems: 'flex-start',
+        display: 'inline-flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        minHeight: tappableHeight,
       },
       '.the-list-item-image': {
         marginRight: '8px',
