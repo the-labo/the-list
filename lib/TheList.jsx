@@ -57,6 +57,7 @@ TheList.propTypes = {
 TheList.defaultProps = {
   alt: 'No Data Found',
   horizontal: false,
+  role: 'list',
   spinning: false,
 }
 

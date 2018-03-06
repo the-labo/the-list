@@ -36,6 +36,12 @@
           "value": "false",
           "computed": false
         }
+      },
+      "role": {
+        "defaultValue": {
+          "value": "'list'",
+          "computed": false
+        }
       }
     }
   },
@@ -71,7 +77,15 @@
         ],
         "returns": null
       }
-    ]
+    ],
+    "props": {
+      "role": {
+        "defaultValue": {
+          "value": "'group'",
+          "computed": false
+        }
+      }
+    }
   },
   "TheListItem": {
     "description": "Item of list",
@@ -240,6 +254,12 @@
         "description": "Link to",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "role": {
+        "defaultValue": {
+          "value": "'listitem'",
           "computed": false
         }
       }

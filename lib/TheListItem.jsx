@@ -140,6 +140,7 @@ TheListItem.defaultProps = {
   appendix: null,
   borderless: false,
   disclosure: false,
+  role: 'listitem',
   subTitle: null,
   thumbnail: null,
   thumbnailHeight: 72,

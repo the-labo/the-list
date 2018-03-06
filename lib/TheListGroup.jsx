@@ -26,6 +26,7 @@ class TheListGroup extends React.Component {
     let {children, className} = props
     return (
       <h3 {...htmlAttributesFor(props, {except: ['className']})}
+          role='heading'
           {...eventHandlersFor(props, {except: []})}
           className={classnames('the-list-group-header', className)}
       >
@@ -53,7 +54,9 @@ class TheListGroup extends React.Component {
 
 TheListGroup.propTypes = {}
 
-TheListGroup.defaultProps = {}
+TheListGroup.defaultProps = {
+  role: 'group',
+}
 
 TheListGroup.displayName = 'TheListGroup'
 
