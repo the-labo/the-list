@@ -176,11 +176,17 @@ List components
 | `alt` | node  |  | `'No Data Found'` |
 | `horizontal` | bool  |  | `false` |
 | `spinning` | bool  |  | `false` |
+| `role` |   |  | `'list'` |
 
 ### TheListGroup
 
 Group of list
 
+**Props**
+
+| Name | Type | Description | Default |
+| --- | --- | ---- | ---- |
+| `role` |   |  | `'group'` |
 
 ### TheListItem
 
@@ -200,6 +206,7 @@ Item of list
 | `thumbnailWidth` | union  | Width of thumbnail | `72` |
 | `title` | node  | Title text | `null` |
 | `to` | string  | Link to | `null` |
+| `role` |   |  | `'listitem'` |
 
 ### TheListStyle
 
