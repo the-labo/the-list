@@ -16,7 +16,7 @@
     "the-component-util": "^2.2.1",
     "the-condition": "^3.0.0",
     "the-icon": "^4.0.4",
-    "the-image": "^2.0.1",
+    "the-image": "^2.0.2",
     "the-link": "^3.0.8",
     "the-spin": "^3.1.0",
     "the-style": "^2.1.0"
@@ -34,7 +34,7 @@
     "the-script-share": "^1.0.5",
     "the-script-test": "^2.1.0",
     "the-script-update": "^1.0.0",
-    "the-templates": "^3.1.4"
+    "the-templates": "^3.1.7"
   },
   "engines": {
     "node": ">=6",

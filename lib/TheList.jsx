@@ -24,7 +24,7 @@ class TheList extends React.PureComponent {
     } = props
     const empty = React.Children.count(children) === 0
     return (
-      <ul {...htmlAttributesFor(props, {except: ['className']})}
+      <ul {...htmlAttributesFor(props, {except: ['className', 'alt']})}
           {...eventHandlersFor(props, {except: []})}
           className={classnames('the-list', className, {
             'the-list-horizontal': horizontal,
