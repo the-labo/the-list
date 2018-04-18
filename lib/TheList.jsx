@@ -12,7 +12,7 @@ import TheListStyle from './TheListStyle'
 /**
  * List components
  */
-class TheList extends React.PureComponent {
+class TheList extends React.Component {
   render () {
     const {props} = this
     const {
