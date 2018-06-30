@@ -22,7 +22,7 @@ class TheList extends React.Component {
       horizontal,
       spinning,
     } = props
-    const empty = React.Children.count(children) === 0
+    const empty = props.empty || React.Children.count(children) === 0
     return (
       <ul {...htmlAttributesFor(props, {except: ['className', 'alt']})}
           {...eventHandlersFor(props, {except: []})}

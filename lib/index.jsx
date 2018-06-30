@@ -11,9 +11,8 @@ import TheListItem from './TheListItem'
 import TheListStyle from './TheListStyle'
 
 export {
-  TheList,
-  TheListGroup,
-  TheListItem,
-  TheListStyle,
+ TheList,
+ TheListGroup,
+ TheListItem,
+ TheListStyle,
 }
-
