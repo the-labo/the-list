@@ -17,9 +17,9 @@
     "the-condition": "^3.0.3",
     "the-icon": "^4.0.8",
     "the-image": "^2.0.7",
-    "the-link": "^3.0.12",
+    "the-link": "^3.0.13",
     "the-spin": "^3.1.7",
-    "the-style": "^2.1.11"
+    "the-style": "^2.1.13"
   },
   "devDependencies": {
     "@babel/runtime": "^7.0.0-beta.51",
@@ -27,7 +27,7 @@
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
     "the-component-demo": "^4.0.12",
-    "the-router": "^2.0.10",
+    "the-router": "^2.0.13",
     "the-script-build": "^3.1.17",
     "the-script-doc": "^1.0.2",
     "the-script-release": "^1.0.6",
