@@ -45,6 +45,7 @@ TheListStyle.data = (options) => {
         listStyle: 'none',
         padding: '32px 8px',
         textAlign: 'center',
+        width: '100%',
       },
       '.the-list-item': {
         '&.the-list-item-borderless': {
