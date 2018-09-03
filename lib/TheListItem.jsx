@@ -44,6 +44,18 @@ class TheListItem extends React.Component {
     )
   }
 
+  constructor () {
+    super(...arguments)
+    this.handleThumbnail = this.handleThumbnail.bind(this)
+  }
+
+  handleThumbnail (e) {
+    e.stopPropagation()
+    e.preventDefault()
+    const {onThumbnail, thumbnail} = this.props
+    onThumbnail && onThumbnail(thumbnail)
+  }
+
   render () {
     const {props} = this
     const {Col, SubTitle, Title} = TheListItem
@@ -82,6 +94,7 @@ class TheListItem extends React.Component {
               <Col>
                 <TheImage className='the-list-item-image'
                           height={thumbnailHeight}
+                          onClick={this.handleThumbnail}
                           src={thumbnail}
                           width={thumbnailWidth}
                 />
@@ -140,6 +153,7 @@ TheListItem.defaultProps = {
   appendix: null,
   borderless: false,
   disclosure: false,
+  onThumbnail: null,
   role: 'listitem',
   subTitle: null,
   thumbnail: null,

@@ -132,6 +132,18 @@
           }
         ],
         "returns": null
+      },
+      {
+        "name": "handleThumbnail",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
       }
     ],
     "props": {
@@ -252,6 +264,12 @@
         },
         "required": false,
         "description": "Link to",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onThumbnail": {
         "defaultValue": {
           "value": "null",
           "computed": false
