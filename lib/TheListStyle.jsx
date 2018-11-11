@@ -7,8 +7,8 @@ import { asStyleData } from 'the-component-util'
 import { TheStyle } from 'the-style'
 
 /** Style for TheList */
-const TheListStyle = ({className, id, options}) => (
-  <TheStyle {...{id}}
+const TheListStyle = ({ className, id, options }) => (
+  <TheStyle {...{ id }}
             className={classnames('the-list-style', className)}
             styles={TheListStyle.data(options)}
   />
@@ -25,7 +25,7 @@ TheListStyle.defaultProps = {
 }
 
 TheListStyle.data = (options) => {
-  const {ThemeValues} = TheStyle
+  const { ThemeValues } = TheStyle
   const {
     backgroundColor = ThemeValues.backgroundColor,
     contentPadding = ThemeValues.contentPadding,

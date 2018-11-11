@@ -11,10 +11,10 @@ import { TheIcon } from 'the-icon'
  */
 class TheListGroup extends React.Component {
   static Body (props) {
-    let {children, className} = props
+    let { children, className } = props
     return (
-      <div {...htmlAttributesFor(props, {except: ['className']})}
-           {...eventHandlersFor(props, {except: []})}
+      <div {...htmlAttributesFor(props, { except: ['className'] })}
+           {...eventHandlersFor(props, { except: [] })}
            className={classnames('the-list-group-body', className)}
       >
         {children}
@@ -23,11 +23,11 @@ class TheListGroup extends React.Component {
   }
 
   static Header (props) {
-    let {children, className} = props
+    let { children, className } = props
     return (
-      <h3 {...htmlAttributesFor(props, {except: ['className']})}
+      <h3 {...htmlAttributesFor(props, { except: ['className'] })}
           role='heading'
-          {...eventHandlersFor(props, {except: []})}
+          {...eventHandlersFor(props, { except: [] })}
           className={classnames('the-list-group-header', className)}
       >
         {children}
@@ -36,14 +36,14 @@ class TheListGroup extends React.Component {
   }
 
   render () {
-    const {props} = this
+    const { props } = this
     const {
       children,
       className,
     } = props
     return (
-      <div {...htmlAttributesFor(props, {except: ['className']})}
-           {...eventHandlersFor(props, {except: []})}
+      <div {...htmlAttributesFor(props, { except: ['className'] })}
+           {...eventHandlersFor(props, { except: [] })}
            className={classnames('the-list-group', className)}
       >
         {children}

@@ -13,9 +13,9 @@ import { TheLink } from 'the-link'
  */
 class TheListItem extends React.Component {
   static Col (props) {
-    const {children, className, wide = false} = props
+    const { children, className, wide = false } = props
     return (
-      <div {...htmlAttributesFor(props, {except: ['className']})}
+      <div {...htmlAttributesFor(props, { except: ['className'] })}
            className={c('the-list-item-col', className, {
              'the-list-item-col-wide': wide,
            })}>
@@ -25,9 +25,9 @@ class TheListItem extends React.Component {
   }
 
   static SubTitle (props) {
-    const {className} = props
+    const { className } = props
     return (
-      <div {...htmlAttributesFor(props, {except: ['className']})}
+      <div {...htmlAttributesFor(props, { except: ['className'] })}
            className={c('the-list-item-sub-title', className, {})}>
         {props.subTitle}
       </div>
@@ -35,9 +35,9 @@ class TheListItem extends React.Component {
   }
 
   static Title (props) {
-    const {className} = props
+    const { className } = props
     return (
-      <h3 {...htmlAttributesFor(props, {except: ['className']})}
+      <h3 {...htmlAttributesFor(props, { except: ['className'] })}
           className={c('the-list-item-title', className, {})}>
         {props.title}
       </h3>
@@ -52,13 +52,13 @@ class TheListItem extends React.Component {
   handleThumbnail (e) {
     e.stopPropagation()
     e.preventDefault()
-    const {onThumbnail, thumbnail} = this.props
+    const { onThumbnail, thumbnail } = this.props
     onThumbnail && onThumbnail(thumbnail)
   }
 
   render () {
-    const {props} = this
-    const {Col, SubTitle, Title} = TheListItem
+    const { props } = this
+    const { Col, SubTitle, Title } = TheListItem
     const {
       appendix,
       borderless,
@@ -75,8 +75,8 @@ class TheListItem extends React.Component {
     } = props
     const Inner = to ? TheLink : 'span'
     return (
-      <li {...htmlAttributesFor(props, {except: ['className']})}
-          {...eventHandlersFor(props, {except: []})}
+      <li {...htmlAttributesFor(props, { except: ['className'] })}
+          {...eventHandlersFor(props, { except: [] })}
           className={c('the-list-item', className, {
             'the-list-item-borderless': borderless,
           })}
@@ -102,8 +102,8 @@ class TheListItem extends React.Component {
             )
           }
           <Col wide>
-            {title && (<Title {...{title}}/>)}
-            {subTitle && (<SubTitle {...{subTitle}}/>)}
+            {title && (<Title {...{ title }}/>)}
+            {subTitle && (<SubTitle {...{ subTitle }}/>)}
             {children}
           </Col>
           {

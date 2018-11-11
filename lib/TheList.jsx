@@ -7,14 +7,13 @@ import { eventHandlersFor, htmlAttributesFor } from 'the-component-util'
 import { TheCondition } from 'the-condition'
 import { TheSpin } from 'the-spin'
 import TheListItem from './TheListItem'
-import TheListStyle from './TheListStyle'
 
 /**
  * List components
  */
 class TheList extends React.Component {
   render () {
-    const {props} = this
+    const { props } = this
     const {
       alt,
       children,
@@ -24,8 +23,8 @@ class TheList extends React.Component {
     } = props
     const empty = props.empty || React.Children.count(children) === 0
     return (
-      <ul {...htmlAttributesFor(props, {except: ['className', 'alt']})}
-          {...eventHandlersFor(props, {except: []})}
+      <ul {...htmlAttributesFor(props, { except: ['className', 'alt'] })}
+          {...eventHandlersFor(props, { except: [] })}
           className={classnames('the-list', className, {
             'the-list-horizontal': horizontal,
           })}
@@ -45,7 +44,6 @@ class TheList extends React.Component {
   }
 }
 
-TheList.Style = TheListStyle
 TheList.Item = TheListItem
 
 TheList.propTypes = {
