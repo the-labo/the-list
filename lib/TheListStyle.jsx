@@ -37,7 +37,13 @@ TheListStyle.data = (options) => {
     tappableHeight = ThemeValues.tappableHeight,
   } = options
   return Object.assign({},
-    asStyleData('.the-list', {
+    asStyleData({
+      '.the-list': {
+        backgroundColor,
+        margin: 0,
+        padding: 0,
+        position: 'relative',
+      },
       '.the-list-alt': {
         color: '#CCC',
         display: 'block',
@@ -92,44 +98,39 @@ TheListStyle.data = (options) => {
         margin: 0,
         padding: '0 4px',
       },
-      '&': {
-        backgroundColor,
-        margin: 0,
-        padding: 0,
-        position: 'relative',
-      },
-    }),
-    asStyleData('.the-list-horizontal', {
-      '.the-list-item': {
-        '.the-list-item-inner': {
-          border: `1px solid ${lightBorderColor}`,
-          flexDirection: 'column',
-          margin: '8px',
-          padding: '8px',
-        },
-        '&.the-list-item-borderless': {
+      '.the-list.the-list-horizontal': {
+        '.the-list-item': {
           '.the-list-item-inner': {
-            border: 'none',
+            border: `1px solid ${lightBorderColor}`,
+            flexDirection: 'column',
+            margin: '8px',
+            padding: '8px',
           },
+          '&.the-list-item-borderless': {
+            '.the-list-item-inner': {
+              border: 'none',
+            },
+          },
+          border: 'none',
+          display: 'block',
+          flexShrink: 0,
+          margin: 0,
+          maxWidth: '100%',
+          overflow: 'hidden',
+          width: 'auto',
         },
-        border: 'none',
-        display: 'block',
-        flexShrink: 0,
-        margin: 0,
-        maxWidth: '100%',
-        overflow: 'hidden',
-        width: 'auto',
-      },
-      '&': {
         alignItems: 'flex-start',
         display: 'flex',
         margin: '0',
         overflow: 'auto',
         padding: '8px 4px',
       },
-
     }),
-    asStyleData('.the-list-group', {
+    asStyleData({
+      '.the-list-group': {
+        display: 'block',
+        margin: '8px 0',
+      },
       '.the-list-group-body': {},
       '.the-list-group-header': {
         backgroundColor: lightBackgroundColor,
@@ -139,10 +140,6 @@ TheListStyle.data = (options) => {
         fontWeight: 'normal',
         margin: 0,
         padding: '0 8px',
-      },
-      '&': {
-        display: 'block',
-        margin: '8px 0',
       },
     })
   )
