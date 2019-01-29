@@ -201,7 +201,7 @@ Item of list
 | `thumbnailHeight` | union  | Height of thumbnail | `72` |
 | `thumbnailWidth` | union  | Width of thumbnail | `72` |
 | `title` | node  | Title text | `null` |
-| `to` | string  | Link to | `null` |
+| `to` | union  | Link to | `null` |
 | `onThumbnail` |   |  | `null` |
 | `role` |   |  | `'listitem'` |
 

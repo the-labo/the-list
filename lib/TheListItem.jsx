@@ -146,7 +146,7 @@ TheListItem.propTypes = {
   /** Title text */
   title: PropTypes.node,
   /** Link to */
-  to: PropTypes.string,
+  to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 }
 
 TheListItem.defaultProps = {
