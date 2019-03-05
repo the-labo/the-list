@@ -8,9 +8,10 @@ import { TheStyle } from 'the-style'
 
 /** Style for TheList */
 const TheListStyle = ({ className, id, options }) => (
-  <TheStyle {...{ id }}
-            className={classnames('the-list-style', className)}
-            styles={TheListStyle.data(options)}
+  <TheStyle
+    {...{ id }}
+    className={classnames('the-list-style', className)}
+    styles={TheListStyle.data(options)}
   />
 )
 
@@ -36,7 +37,8 @@ TheListStyle.data = (options) => {
     lightTextColor = ThemeValues.lightTextColor,
     tappableHeight = ThemeValues.tappableHeight,
   } = options
-  return Object.assign({},
+  return Object.assign(
+    {},
     asStyleData({
       '.the-list': {
         backgroundColor,
@@ -143,7 +145,7 @@ TheListStyle.data = (options) => {
         margin: 0,
         padding: '0 8px',
       },
-    })
+    }),
   )
 }
 

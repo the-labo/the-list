@@ -41,7 +41,8 @@
         "defaultValue": {
           "value": "'list'",
           "computed": false
-        }
+        },
+        "required": false
       }
     }
   },
@@ -83,7 +84,8 @@
         "defaultValue": {
           "value": "'group'",
           "computed": false
-        }
+        },
+        "required": false
       }
     }
   },
@@ -281,13 +283,15 @@
         "defaultValue": {
           "value": "null",
           "computed": false
-        }
+        },
+        "required": false
       },
       "role": {
         "defaultValue": {
           "value": "'listitem'",
           "computed": false
-        }
+        },
+        "required": false
       }
     }
   },
